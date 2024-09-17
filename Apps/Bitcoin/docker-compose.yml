@@ -1,3 +1,4 @@
+name: bitcoin
 version: "3.7"
 
 services:
@@ -77,3 +78,21 @@ services:
     networks:
       default:
         ipv4_address: "${APP_BITCOIN_I2P_DAEMON_IP}"
+
+x-casaos:
+    architectures:                  # a list of architectures that the app supports
+        - amd64
+        - arm
+        - arm64
+    main: bitcoin                 # the name of the main service under `services`
+    author: bitcoin
+    category: crypto
+    description:                    # multiple locales are supported
+        en_us: Full Bitcoin Node
+    icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Homebridge/icon.png
+    tagline:                        # multiple locales are supported
+        en_us: bitcoin node crypto
+    title:                          # multiple locales are supported
+        en_us: Bitcoin
+    index: /                        # the index page for web UI, e.g. index.html
+    port_map: "3005"
